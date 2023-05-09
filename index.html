@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript Calculator</title>
+	<style>
+		input[type="button"] {
+			width: 50px;
+			height: 50px;
+			font-size: 20px;
+			background-color: rgb(230, 134, 134);
+			border: none;
+			border-radius: 5px;
+			margin: 5px;
+			cursor: pointer;
+		}
+		input[type="text"] {
+			width: 210px;
+			height: 50px;
+			font-size: 20px;
+			text-align: right;
+			padding-right: 10px;
+			border: none;
+			border-radius: 5px;
+			margin-bottom: 5px;
+		}
+	</style>
+</head>
+<body>
+	<input type="text" id="result" value="">
+	<br>
+	<input type="button" value="1" onclick="insert(1)">
+	<input type="button" value="2" onclick="insert(2)">
+	<input type="button" value="3" onclick="insert(3)">
+	<input type="button" value="+" onclick="insert('+')">
+	<br>
+	<input type="button" value="4" onclick="insert(4)">
+	<input type="button" value="5" onclick="insert(5)">
+	<input type="button" value="6" onclick="insert(6)">
+	<input type="button" value="-" onclick="insert('-')">
+	<br>
+	<input type="button" value="7" onclick="insert(7)">
+	<input type="button" value="8" onclick="insert(8)">
+	<input type="button" value="9" onclick="insert(9)">
+	<input type="button" value="*" onclick="insert('*')">
+	<br>
+	<input type="button" value="." onclick="insert('.')">
+	<input type="button" value="0" onclick="insert(0)">
+	<input type="button" value="C" onclick="clearResult()">
+	<input type="button" value="/" onclick="insert('/')">
+	<br>
+	<input type="button" value="=" onclick="calculate()">
+	<script>
+		function insert(num) {
+			document.getElementById('result').value += num;
+		}
+
+		function clearResult() {
+			document.getElementById('result').value = '';
+		}
+
+		function calculate() {
+			var expression = document.getElementById('result').value;
+			var result = eval(expression);
+			document.getElementById('result').value = result;
+		}
+	</script>
+</body>
+</html>
